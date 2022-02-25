@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1E95A18627C613D9005FE52A"
+               BlueprintIdentifier = "1E95A1A027C61421005FE52A"
                BuildableName = "PokerGameTests.xctest"
                BlueprintName = "PokerGameTests"
                ReferencedContainer = "container:PokerGameApp.xcodeproj">

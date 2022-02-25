@@ -19,6 +19,10 @@ struct CardDeck {
         setUpCards()
     }
     
+    func isEmpty() -> Bool {
+        return count == 0
+    }
+    
     mutating func setUpCards() {
         let faces = Card.FaceData.allCases
         let numerics = Card.NumericData.allCases
@@ -40,8 +44,9 @@ struct CardDeck {
         }
     }
     
-    mutating func draw() -> Card? {
-        return count > 0 ? self.cards.remove(at: Int.random(in: (0..<count))) : nil
+    mutating func draw() -> Card {
+//        return count > 0 ? self.cards.remove(at: Int.random(in: (0..<count))) : nil
+        return self.cards.removeFirst()
     }
     
     mutating func reset() {
