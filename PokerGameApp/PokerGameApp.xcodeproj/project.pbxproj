@@ -22,6 +22,7 @@
 		1E95A1BD27C87DDF005FE52A /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E95A1BC27C87DDF005FE52A /* Hand.swift */; };
 		1E95A1BF27C880BE005FE52A /* Participants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E95A1BE27C880BE005FE52A /* Participants.swift */; };
 		1E95A1C127C8A530005FE52A /* PokerGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E95A1C027C8A530005FE52A /* PokerGameTests.swift */; };
+		1EEADDD027CA685400252913 /* Playable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEADDCF27CA685400252913 /* Playable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1E95A1BC27C87DDF005FE52A /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		1E95A1BE27C880BE005FE52A /* Participants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
 		1E95A1C027C8A530005FE52A /* PokerGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerGameTests.swift; sourceTree = "<group>"; };
+		1EEADDCF27CA685400252913 /* Playable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				1E95A15727C4F6E0005FE52A /* Card.swift */,
 				1E95A15B27C5C315005FE52A /* CardDeck.swift */,
 				1E95A1BC27C87DDF005FE52A /* Hand.swift */,
+				1EEADDCF27CA685400252913 /* Playable.swift */,
 				1E95A1B827C87D2C005FE52A /* Player.swift */,
 				1E95A1BA27C87D32005FE52A /* Dealer.swift */,
 				1E95A1BE27C880BE005FE52A /* Participants.swift */,
@@ -228,6 +231,7 @@
 				1E95A1B727C87D16005FE52A /* PokerGame.swift in Sources */,
 				1E95A1BB27C87D32005FE52A /* Dealer.swift in Sources */,
 				1E95A1BD27C87DDF005FE52A /* Hand.swift in Sources */,
+				1EEADDD027CA685400252913 /* Playable.swift in Sources */,
 				1E95A1B927C87D2C005FE52A /* Player.swift in Sources */,
 				1E95A1BF27C880BE005FE52A /* Participants.swift in Sources */,
 				1E95A0F227C32767005FE52A /* SceneDelegate.swift in Sources */,
