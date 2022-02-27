@@ -31,6 +31,10 @@ class Dealer: Playable {
         }
     }
     
+    func drawCard() -> Card {
+        return self.cardDeck.draw()
+    }
+
     func generateShuffledCardDeck() {
         self.cardDeck.setUpCards()
         self.cardDeck.shuffle()
@@ -38,6 +42,5 @@ class Dealer: Playable {
     
     func setUpPokerGame(stud: Int, participants: Participants) {
         self.generateShuffledCardDeck()
-        self.distributeHand(to: participants, by: stud)
     }
 }
