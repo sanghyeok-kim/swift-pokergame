@@ -21,6 +21,12 @@ struct PokerGame {
                 return 7
             }
         }
+        
+        func loop(event: () -> Void) {
+            (0..<cardCountForGame).forEach { _ in
+                event()
+            }
+        }
     }
     
     enum PlayerCount: Int {
@@ -31,6 +37,12 @@ struct PokerGame {
         
         var excludeDealer: Int {
             return self.rawValue
+        }
+
+        func loop(event: (Int) -> Void) {
+            (0...excludeDealer).forEach { playerIndex in
+                event(playerIndex)
+            }
         }
     }
 
@@ -45,10 +57,23 @@ struct PokerGame {
         self.dealer = Dealer()
         self.participants = Participants(playerCount: playerCount.excludeDealer, dealer: dealer)
     }
-
-    mutating func start() {
+    
+    func distributeCard(playerIndex: Int) {
+        let card = dealer.drawCard()
+        participants.players[playerIndex].receive(card: card)
+    }
+    
+    func distributeCardIterator() {
+        playerCount.loop(event: distributeCard)
+    }
+    
+    func start() {
         if dealer.canDrawCards(count: stud.cardCountForGame * participants.count) {
             dealer.setUpPokerGame(stud: stud.cardCountForGame, participants: participants)
+            
+            stud.loop {
+                distributeCardIterator()
+            }
         }
         else {
             return
