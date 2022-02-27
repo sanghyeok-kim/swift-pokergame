@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CardDeck {
+class CardDeck {
     
     private var cards: [Card] = []
     
@@ -19,7 +19,7 @@ struct CardDeck {
         setUpCards()
     }
     
-    mutating func setUpCards() {
+    func setUpCards() {
         let faces = Card.FaceData.allCases
         let numerics = Card.NumericData.allCases
         
@@ -30,7 +30,7 @@ struct CardDeck {
         }
     }
     
-    mutating func shuffle() {
+    func shuffle() {
         var maxIndex = count - 1
         
         while maxIndex != 0 {
@@ -40,11 +40,11 @@ struct CardDeck {
         }
     }
     
-    mutating func draw() -> Card {
+    func draw() -> Card {
         return self.cards.removeFirst()
     }
     
-    mutating func reset() {
+    func reset() {
         cards.removeAll()
         setUpCards()
     }
