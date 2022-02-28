@@ -58,13 +58,12 @@ struct PokerGame {
         self.participants = Participants(playerCount: playerCount.excludeDealer, dealer: dealer)
     }
     
-    func distributeCard(playerIndex: Int) {
-        let card = dealer.drawCard()
-        participants.players[playerIndex].receive(card: card)
-    }
-    
-    func distributeCardIterator() {
-        playerCount.loop(event: distributeCard)
+    func distributeCards() {
+        let distributionCycle = { (playerIndex: Int) -> Void in
+            let card = dealer.drawCard()
+            participants.players[playerIndex].receive(card: card)
+        }
+        playerCount.loop(event: distributionCycle)
     }
     
     func start() {
@@ -72,7 +71,7 @@ struct PokerGame {
             dealer.setUpPokerGame(stud: stud.cardCountForGame, participants: participants)
             
             stud.loop {
-                distributeCardIterator()
+                distributeCards()
             }
         }
         else {
